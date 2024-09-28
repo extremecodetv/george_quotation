@@ -1,4 +1,13 @@
-$(function () {
+$(async function () {
+
+    async function fetchBlob(url) {
+        const response = await fetch(url);
+    
+        // Here is the significant part 
+        // reading the stream as a blob instead of json
+        return response.blob();
+    }
+
     const reader = new FileReader()
     reader.onload = function () {
         var meme = new Image()
@@ -12,5 +21,5 @@ $(function () {
             $('.choice-section').trigger('choice-done', imgInfo)
         }
     }
-    reader.readAsDataURL('https://github.com/extremecodetv/george_quotation/blob/master/template.png?raw=true')
+    reader.readAsDataURL((await fetchBlob('blob:https://github.com/extremecodetv/george_quotation/blob/master/template.png?raw=true')))
 })
