@@ -12,5 +12,5 @@ $(function () {
             $('.choice-section').trigger('choice-done', imgInfo)
         }
     }
-    reader.readAsDataURL(file)
+    reader.readAsDataURL('https://github.com/extremecodetv/george_quotation/blob/master/template.png?raw=true')
 })
