@@ -9,10 +9,10 @@ $(async function () {
     }
 
     var meme = new Image()
-    meme.src = 'https://github.com/extremecodetv/george_quotation/blob/master/template.png?raw=true'
+    meme.src = 'https://raw.githubusercontent.com/extremecodetv/george_quotation/refs/heads/master/template.png'
     meme.onload = function () {
         var imgInfo = {
-            url:'https://github.com/extremecodetv/george_quotation/blob/master/template.png?raw=true',
+            url:'https://raw.githubusercontent.com/extremecodetv/george_quotation/refs/heads/master/template.png',
             height: meme.height,
             width: meme.width,
         }
