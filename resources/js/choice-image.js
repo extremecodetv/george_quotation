@@ -18,4 +18,15 @@ $(async function () {
         }
         $('.choice-section').trigger('choice-done', imgInfo)
     }
+
+    // Event: Choice was made
+    $('.choice-section').on('choice-done', function (e, imgInfo) {
+        $('.discription').fadeOut()
+        $('.choice-section').fadeOut('normal', function () {
+            $('.edit-section').removeClass('d-none').hide().fadeIn()
+            $('.fabric-canvas-wrapper').append(`<canvas id="meme-canvas"></canvas>`)
+            processMeme(imgInfo)
+        })
+    })
+    
 })
